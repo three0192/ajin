@@ -1,0 +1,31 @@
+{% extends 'first/base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'first/style2.css' %}">
+
+<div class="result-container">
+    <div class="chosen-numbers">
+        <h3>당신이 선택한 로또 번호입니다.</h3>
+        <ul>
+            {% for num in chosen %}
+                <li>{{ num }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="generated-numbers">
+        <h3>당첨 번호입니다.</h3>
+        <ul>
+            {% for num in numbers %}
+                <li>{{ num }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<div class="validation-message">
+    <p>{{ isValid }}</p>
+</div>
+
+{% endblock %}
